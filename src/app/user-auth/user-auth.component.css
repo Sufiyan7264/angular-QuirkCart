@@ -1,0 +1,10 @@
+.error-login, .error-signup{
+    color: red;
+    text-align: center;
+}
+.user-option-btn{
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+    text-align: center;
+}

@@ -1,0 +1,42 @@
+<ngb-carousel *ngIf="popularProduct" class="carousel-component">
+    <ng-template ngbSlide *ngFor="let item of popularProduct">
+        <div class="picsum-img-wrapper">
+            <img class="image-carousel" src="{{item.image}}" alt="Random first slide" (click)="getproductDetail(item.id)"/>
+        </div>
+        <div class="carousel-caption">
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+<div class="product-container">
+    <h1 class="product-Heading">Trending Products</h1>
+    <div class="product-list-container">
+      <div class="product-list" *ngFor="let item of trendingProduct">
+        <div class="product-img-container">
+          <img
+            src="{{item.image}}"
+            alt="product_img"
+            class="product-image"
+            width="200"
+            height="150"
+          />
+        </div>
+  
+        <div class="product-details">
+          <p class="product product-name">{{item.name}}</p>
+          <div class="horizontal-line"></div>
+          <div class="product-detail-info">
+              <p class="product product-price">Price : $ {{item.price}}</p>
+              <div class="product-color">Colour : {{item.color}}</div>
+          </div>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="icon-button">
+            <fa-icon [icon]="infoIcon" (click)="getproductDetails(item.id)" class="btn btn-outline-info " ></fa-icon>
+            <fa-icon [icon]="icon" class="btn btn-outline-danger edit-button" ></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  

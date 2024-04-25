@@ -1,0 +1,44 @@
+<div class="cart-container">
+    <h1>My Cart</h1>
+    <div class="product-cart">
+    <div >
+        <div *ngFor="let item of cartData" class="cart-components">
+            <div class="cart-img">
+                <img src="{{item.image}}" width="200px" height="150px" alt="">
+            </div>
+            <div class="cart-items">
+                <p class="product-name">{{item.name}}</p>
+                <p class="product-price">{{item.price}}</p>
+                <p class="product-quantity">Quantity: {{item.quantity}}</p>
+                <button class="btn btn-outline-danger remove-btn" (click)="removeToCart(item.id)" >Remove to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="cart-summary">
+        <h3>Summary</h3>
+        <div class="product-detail">
+            <div class="product-value">
+                <p class="price-eval">Total Amount:</p>
+                <p>{{cartSummary.price}}</p>
+            </div>
+            <div class="product-value">
+                <p class="price-eval">Tax:</p>
+                <p>{{cartSummary.tax}}</p>
+            </div>
+            <div class="product-value">
+                <p class="price-eval">Discount:</p>
+                <p>{{cartSummary.discount}}</p>
+            </div>
+            <div class="product-value">
+                <p class="price-eval">Delivery Charges:</p>
+                <p>{{cartSummary.delivery}}</p>
+            </div>
+            <div class="product-value">
+                <h5 class="price-eval">Total</h5>
+                <h5>{{cartSummary.totalPrice}}</h5>
+            </div>
+            <button (click)="checkout()" class="btn btn-outline-success">Checkout</button>
+        </div>
+    </div>
+    </div>
+</div>

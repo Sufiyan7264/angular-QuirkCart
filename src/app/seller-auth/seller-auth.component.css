@@ -1,0 +1,15 @@
+
+.seller-auth-component{
+    margin-top: 3rem;
+}
+.seller-option-btn{
+    all: unset;
+    font-size: small;
+    cursor: pointer;
+    text-align: center;
+    color: blueviolet;
+}
+.error-login, .error-signup{
+    color: red;
+    text-align: center;
+}

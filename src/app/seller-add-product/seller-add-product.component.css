@@ -1,0 +1,9 @@
+.successProductMessage{
+    text-align: center;
+    color: green;
+}
+.add-product-heading{
+    text-align: center;
+    margin-top: 1rem;
+    color: blueviolet;
+}

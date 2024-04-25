@@ -1,0 +1,29 @@
+<div class="product-container">
+  <h1 class="product-Heading">Product List</h1>
+  <p class="success-message">{{successMessage}}</p>
+  <div class="product-list-container">
+    <div class="product-list" *ngFor="let data of productData">
+      <div class="product-img-container">
+        <img
+          [src]="data.image"
+          alt="product_img"
+          class="product-image"
+          width="200"
+          height="150"
+        />
+      </div>
+
+      <div class="product-details">
+        <p class="product product-name">{{ data.name }}</p>
+        <div class="product-detail-info">
+            <p class="product product-price">$ {{ data.price }}</p>
+            <div class="product-color" [ngStyle]="{'backgroundColor': data.color}" ></div>
+        </div>
+        <p class="product">category : {{data.category}}</p>
+        <p class="product-description">{{data.description}}</p>
+      </div>
+      <fa-icon [icon]="icon" class="btn btn-outline-danger" (click)="deleteProduct(data.id)"></fa-icon>
+      <fa-icon [icon]="editIcon" class="btn btn-outline-info edit-button" (click)="editProduct(data.id)" routerLink="/seller-update-product/{{data.id}}"></fa-icon>
+    </div>
+  </div>
+</div>

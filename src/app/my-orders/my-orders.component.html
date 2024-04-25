@@ -1,0 +1,23 @@
+<div class="order-container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="order-img">Orders</th>
+            <th scope="col">Orders ID</th>
+            <th scope="col">Price</th>
+            <th scope="col">Status</th>
+            <th scope="col">Cancel Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orderDataList">
+            <th scope="row" class="img-div"><img src="https://th.bing.com/th/id/OIP.XjqmwLKj2S5lflhLV59G5QHaH6?w=204&h=218&c=7&r=0&o=5&dpr=1.5&pid=1.7" width="150px" height="100px" alt=""></th>
+            <td>#{{order.id}}</td>
+            <td>{{order.totalPrice}}</td>
+            <td>In Progress</td>
+            <td><button class="btn btn-outline-danger" (click)="removeOrder(order.id)">Cancel Order</button></td>
+          </tr>
+                  
+        </tbody>
+      </table>
+</div>

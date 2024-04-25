@@ -1,0 +1,31 @@
+<div class="product-detail-container">
+    <h1 class="product-heading">Product Detail</h1>
+    <div class="product-detail-content" *ngFor="let item of ProductDetail">
+        <div class="product-img">
+            <img src="{{item.image}}" alt="" width="450px" height="400px">
+        </div>
+        <div class="product-item-content">
+            <div class="product-detail-info">
+                <h4>{{item.name}}</h4>
+                <h6>Price : $ {{item.price}}</h6>
+                <div class="flex-color">
+                    <span>Colour :</span>
+                    <div class="product-color" [ngStyle]="{'backgroundColor': item.color}"></div>
+                </div>
+                <h6>Category : {{item.category}}</h6>
+                <h6>Description : {{item.description}}</h6>
+            </div>
+
+            <div class="product-detail-button">
+                <button class="btn btn-success buy-button">Buy Now</button>
+                <fa-icon [icon]="icon" class="btn btn-outline-danger cart-button" *ngIf="!removeToCart" (click)="AddToCart()" ></fa-icon>
+                <button class="btn btn-outline-danger cart-button" *ngIf="removeToCart" (click)="RemoveToCart(item.id)" >Remove to Cart</button>
+            </div>
+            <div class="quntity-product">
+                <button class="btn btn-primary" (click)="handleQuantity('min')">-</button>
+                <input type="text" value="{{productQuantity}}">
+                <button class="btn btn-primary" (click)="handleQuantity('plus')">+</button>
+            </div>
+        </div>
+    </div>
+</div>

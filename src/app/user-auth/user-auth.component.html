@@ -1,0 +1,74 @@
+<div class="user-auth-component">
+  <div class="signup" *ngIf="!isLoggedIn">
+    <h1 class="signup-heading">User Sign-up</h1>
+    <!-- <p class="error-signup">{{ErrorSignUp}}</p> -->
+    <form
+      #formSignUp="ngForm"
+      class="input-form"
+      (ngSubmit)="userSignUp(formSignUp.value)"
+    >
+      <input
+        class="input-item"
+        type="text"
+        name="name"
+        ngModel
+        placeholder="Enter User Name*"
+      />
+      <input
+        class="input-item"
+        type="email"
+        name="email"
+        placeholder="Enter User Email*"
+        ngModel
+      />
+      <input
+        class="input-item"
+        type="password"
+        name="password"
+        placeholder="Enter User Password*"
+        ngModel
+      />
+      <button class="btn btn-outline-primary">Sign Up</button>
+      <a (click)="openLogIn()" class="user-option-btn"
+        >Already have account ? Log In</a
+      >
+    </form>
+  </div>
+  <div class="login" *ngIf="isLoggedIn">
+    <h1 class="login">User Log-in</h1>
+    <p class="error-login">{{authError}}</p>
+    <form
+      #loginForms="ngForm"
+      class="input-form"
+      (ngSubmit)="userLogIn(loginForms.value)"
+      
+    >
+      <input
+        class="input-item"
+        type="text"
+        name="email"
+        ngModel
+        placeholder="Enter User Email*"
+        #email="ngModel"
+        required
+      />
+      <p class="error-p"><span *ngIf="email.invalid && email.touched">Please enter the valid email</span></p>
+      <input
+        class="input-item"
+        type="password"
+        name="password"
+        ngModel
+        placeholder="Enter User Password*"
+        #password="ngModel"
+        required
+        minlength="6"
+        maxlength="20"
+      />
+      <p class="error-p"><span *ngIf="password.invalid && password.touched">Please enter the valid password</span></p>
+      <button class="btn btn-outline-secondary" [disabled]="loginForms.invalid">Log In</button>
+      <a (click)="openSignUp()" class="user-option-btn"
+        >Don't have account ? Sign Up</a
+      >
+    </form>
+  </div>
+</div>
