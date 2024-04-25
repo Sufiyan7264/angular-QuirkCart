@@ -17,6 +17,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## JSON server
 
 Run json server before running this project in your local host with `json-server --watch db.json` command.
+Can't get the API of full search query in json-server because of not working query parameter.
 
 ## Running unit tests
 
